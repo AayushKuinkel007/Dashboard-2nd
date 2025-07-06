@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useDispatch, useSelector } from "react-redux";
-import { signupUser } from "../../slices/User/signupActions";
+import { signupUser } from "../../slices/user/signupActions";
 import LoadingComponent from "../../component/Common/Dashboard/LoadingComponent";
 import Navbar from "../../component/Common/Navbar";
 import { AuthContext } from "../../auth/Authcontext"; // 🔥 Added
@@ -174,7 +174,7 @@ const Signup = () => {
                   <div className="d-flex justify-content-center">
                     <button
                       type="submit"
-                      className="btn btn-lg btn-primary"
+                      className="btn btn-lg btn-dark"
                       disabled={loading}
                     >
                       {loading ? "Signing up..." : "Signup"}
