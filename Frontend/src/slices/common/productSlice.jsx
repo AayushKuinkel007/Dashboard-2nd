@@ -1,0 +1,85 @@
+import { createSlice } from "@reduxjs/toolkit";
+
+
+const productSlice = createSlice({
+    name:'products',
+    initialState:{
+        products:[
+            {
+                name:"Laptop",
+                price:'5000',
+                onstock:'yes',
+                img:'https://i5.walmartimages.com/seo/HP-15-6-FHD-Laptop-AMD-Ryzen-5-7520U-8GB-RAM-256GB-SSD-Pale-Rose-Gold-Windows-11-Home-15-fc0039wm_b1326872-e582-4ad9-b068-c74f24128204.29680ead27a949c3afd39c55a9c3b1d6.jpeg'
+            },
+                        {
+                name:"Computer",
+                price:'5000',
+                onstock:'yes',
+                img:'https://i5.walmartimages.com/seo/HP-15-6-FHD-Laptop-AMD-Ryzen-5-7520U-8GB-RAM-256GB-SSD-Pale-Rose-Gold-Windows-11-Home-15-fc0039wm_b1326872-e582-4ad9-b068-c74f24128204.29680ead27a949c3afd39c55a9c3b1d6.jpeg'
+            },
+                        {
+                name:"PC",
+                price:'5000',
+                onstock:'yes',
+                img:'https://i5.walmartimages.com/seo/HP-15-6-FHD-Laptop-AMD-Ryzen-5-7520U-8GB-RAM-256GB-SSD-Pale-Rose-Gold-Windows-11-Home-15-fc0039wm_b1326872-e582-4ad9-b068-c74f24128204.29680ead27a949c3afd39c55a9c3b1d6.jpeg'
+            },
+                        {
+                name:"Laptop",
+                price:'5000',
+                onstock:'yes',
+                img:'https://i5.walmartimages.com/seo/HP-15-6-FHD-Laptop-AMD-Ryzen-5-7520U-8GB-RAM-256GB-SSD-Pale-Rose-Gold-Windows-11-Home-15-fc0039wm_b1326872-e582-4ad9-b068-c74f24128204.29680ead27a949c3afd39c55a9c3b1d6.jpeg'
+            },
+                        {
+                name:"Computer",
+                price:'5000',
+                onstock:'yes',
+                img:'https://i5.walmartimages.com/seo/HP-15-6-FHD-Laptop-AMD-Ryzen-5-7520U-8GB-RAM-256GB-SSD-Pale-Rose-Gold-Windows-11-Home-15-fc0039wm_b1326872-e582-4ad9-b068-c74f24128204.29680ead27a949c3afd39c55a9c3b1d6.jpeg'
+            },
+                        {
+                name:"PC",
+                price:'5000',
+                onstock:'yes',
+                img:'https://i5.walmartimages.com/seo/HP-15-6-FHD-Laptop-AMD-Ryzen-5-7520U-8GB-RAM-256GB-SSD-Pale-Rose-Gold-Windows-11-Home-15-fc0039wm_b1326872-e582-4ad9-b068-c74f24128204.29680ead27a949c3afd39c55a9c3b1d6.jpeg'
+            },
+                        {
+                name:"Laptop",
+                price:'5000',
+                onstock:'yes',
+                img:'https://i5.walmartimages.com/seo/HP-15-6-FHD-Laptop-AMD-Ryzen-5-7520U-8GB-RAM-256GB-SSD-Pale-Rose-Gold-Windows-11-Home-15-fc0039wm_b1326872-e582-4ad9-b068-c74f24128204.29680ead27a949c3afd39c55a9c3b1d6.jpeg'
+            },
+                        {
+                name:"Computer",
+                price:'5000',
+                onstock:'yes',
+                img:'https://i5.walmartimages.com/seo/HP-15-6-FHD-Laptop-AMD-Ryzen-5-7520U-8GB-RAM-256GB-SSD-Pale-Rose-Gold-Windows-11-Home-15-fc0039wm_b1326872-e582-4ad9-b068-c74f24128204.29680ead27a949c3afd39c55a9c3b1d6.jpeg'
+            },
+                        {
+                name:"PC",
+                price:'5000',
+                onstock:'yes',
+                img:'https://i5.walmartimages.com/seo/HP-15-6-FHD-Laptop-AMD-Ryzen-5-7520U-8GB-RAM-256GB-SSD-Pale-Rose-Gold-Windows-11-Home-15-fc0039wm_b1326872-e582-4ad9-b068-c74f24128204.29680ead27a949c3afd39c55a9c3b1d6.jpeg'
+            },
+                        {
+                name:"Laptop",
+                price:'5000',
+                onstock:'yes',
+                img:'https://i5.walmartimages.com/seo/HP-15-6-FHD-Laptop-AMD-Ryzen-5-7520U-8GB-RAM-256GB-SSD-Pale-Rose-Gold-Windows-11-Home-15-fc0039wm_b1326872-e582-4ad9-b068-c74f24128204.29680ead27a949c3afd39c55a9c3b1d6.jpeg'
+            },
+                        {
+                name:"Computer",
+                price:'5000',
+                onstock:'yes',
+                img:'https://i5.walmartimages.com/seo/HP-15-6-FHD-Laptop-AMD-Ryzen-5-7520U-8GB-RAM-256GB-SSD-Pale-Rose-Gold-Windows-11-Home-15-fc0039wm_b1326872-e582-4ad9-b068-c74f24128204.29680ead27a949c3afd39c55a9c3b1d6.jpeg'
+            },
+                        {
+                name:"PC",
+                price:'5000',
+                onstock:'yes',
+                img:'https://i5.walmartimages.com/seo/HP-15-6-FHD-Laptop-AMD-Ryzen-5-7520U-8GB-RAM-256GB-SSD-Pale-Rose-Gold-Windows-11-Home-15-fc0039wm_b1326872-e582-4ad9-b068-c74f24128204.29680ead27a949c3afd39c55a9c3b1d6.jpeg'
+            },
+        ]
+    }
+}
+
+)
+export default productSlice.reducer

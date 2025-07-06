@@ -16,15 +16,19 @@ const Navbar = () => {
         <div className="col-md-4 d-flex justify-content-center align-items-center">
           <ul className="d-flex justify-content-center m-0 p-0">
             <li className="ms-5" style={{ listStyle: "none" }}>
-              <Link className="text-light" to="/" style={{ textDecoration: "none" }}>
+              <Link className="text-light btn btn-dark" to="/" style={{ textDecoration: "none" }}>
                 Home
               </Link>
             </li>
             <li className="ms-5 text-light" style={{ listStyle: "none" }}>
-              About us
+              <Link className="text-light btn btn-dark" to="#" style={{ textDecoration: "none" }}>
+                Services
+              </Link>
             </li>
             <li className="ms-5 text-light" style={{ listStyle: "none" }}>
-              Contact us
+              <Link className="text-light btn btn-dark" to="/" style={{ textDecoration: "none" }}>
+                Contact
+              </Link>
             </li>
           </ul>
         </div>
@@ -41,10 +45,10 @@ const Navbar = () => {
             </Link>
           ) : (
             <>
-              <Link to="/login" className="btn btn-primary">
+              <Link to="/login" className="btn btn-dark">
                 Login
               </Link>
-              <Link to="/signup" className="btn btn-success ms-3">
+              <Link to="/signup" className="btn btn-dark ms-3">
                 Signup
               </Link>
             </>

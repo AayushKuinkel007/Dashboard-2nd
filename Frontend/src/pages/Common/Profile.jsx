@@ -49,13 +49,13 @@ const Profile = () => {
                   </h5>
                   <div className="d-flex justify-content-center mt-3">
                     <Link
-                      className="btn btn-success btn-lg"
+                      className="btn btn-dark"
                     >
                       Edit Profile
                     </Link>
                     <Link
                       to="/user-account"
-                      className="btn btn-primary btn-lg ms-3"
+                      className="btn btn-dark ms-3"
                     >
                       Account Details
                     </Link>
