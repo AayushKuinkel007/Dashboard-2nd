@@ -3,6 +3,7 @@ import LoadingComponent from "../../component/Common/Dashboard/LoadingComponent"
 import Navbar from "../../component/Common/Navbar";
 import { useSelector } from "react-redux";
 import '../../css/Homepage.css'
+import Searchbar from "../../component/Common/Searchbar";
 const Homepage = () => {
   const [loading, setLoading] = useState(true);
 
@@ -20,6 +21,7 @@ const Homepage = () => {
       ) : (
         <>
           <Navbar />
+          <Searchbar/>
           <div className="container mt-4">
             <div className="row justify-content-center">
               {cardData &&
