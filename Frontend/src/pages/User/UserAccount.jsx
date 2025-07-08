@@ -38,7 +38,7 @@ const UserAccount = () => {
                 </h4>
               </div>
               <div className="container mb-3">
-                <button className="btn btn-success">Change Password</button>
+                <button className="btn btn-dark">Change Password</button>
               </div>
             </div>
           </WeblayoutComponent>
