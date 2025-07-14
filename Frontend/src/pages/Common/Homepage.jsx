@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
 import LoadingComponent from "../../component/Common/Dashboard/LoadingComponent";
 import Navbar from "../../component/Common/Navbar";
-import { useSelector } from "react-redux";
-import '../../css/Homepage.css'
+import { useDispatch, useSelector } from "react-redux";
+import "../../css/Homepage.css";
 import Searchbar from "../../component/Common/Searchbar";
+import { showproductDetails } from "../../slices/common/productdetailSlice";
+import { data, Link, useNavigate } from "react-router-dom";
+
 const Homepage = () => {
   const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
+  const Navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1000);
@@ -14,6 +19,10 @@ const Homepage = () => {
 
   const cardData = useSelector((state) => state.productShow.products);
 
+  const productDetails = (product) => {
+    dispatch(showproductDetails(product));
+  };
+
   return (
     <>
       {loading ? (
@@ -21,7 +30,7 @@ const Homepage = () => {
       ) : (
         <>
           <Navbar />
-          <Searchbar/>
+          <Searchbar />
           <div className="container mt-4">
             <div className="row justify-content-center">
               {cardData &&
@@ -34,11 +43,18 @@ const Homepage = () => {
                       className="card product-card p-3"
                       style={{ width: "18rem" }}
                     >
-                      <img
-                        src={product.img}
-                        className="card-img-top"
-                        alt="..."
-                      />
+                      <Link to="/prod_details">
+                        <button
+                          className="border-0 bg-white"
+                          onClick={() => productDetails(product)}
+                        >
+                          <img
+                            src={product.img}
+                            className="card-img-top"
+                            alt="..."
+                          />
+                        </button>
+                      </Link>
                       <div className="card-body text-center">
                         <h5 className="card-title">{product.name}</h5>
                         <p className="card-text">
@@ -49,7 +65,6 @@ const Homepage = () => {
                         </p>
                       </div>
                       <div className="p-3 d-flex justify-content-center">
-
                         <button className="btn btn-dark">Add To Cart</button>
                       </div>
                     </div>

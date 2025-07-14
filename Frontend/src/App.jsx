@@ -11,6 +11,7 @@ import PrivateRoute from "../routes/Privateroute";
 import SellerDashboard from "./pages/Seller/SellerDashboard";
 import UserDashboard from "./pages/user/UserDashboard";
 import UserAccount from "./pages/User/UserAccount";
+import ProductDetail from "./pages/Common/ProductDetail";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/" element={<Homepage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/prod_details" element={<ProductDetail/>}/>
           {/* Should be in private route */}
 
           <Route path="/profile" element={
