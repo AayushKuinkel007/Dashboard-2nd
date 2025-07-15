@@ -12,6 +12,7 @@ import SellerDashboard from "./pages/Seller/SellerDashboard";
 import UserDashboard from "./pages/user/UserDashboard";
 import UserAccount from "./pages/User/UserAccount";
 import ProductDetail from "./pages/Common/ProductDetail";
+import CartPage from "./pages/User/CartPage";
 
 const App = () => {
   return (
@@ -22,35 +23,41 @@ const App = () => {
           <Route path="/" element={<Homepage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/prod_details" element={<ProductDetail/>}/>
+          <Route path="/prod_details" element={<ProductDetail />} />
           {/* Should be in private route */}
 
-          <Route path="/profile" element={
-            <PrivateRoute>
-            <Profile/>
-            </PrivateRoute>
-            } />
+          <Route
+            path="/profile"
+            element={
+              <PrivateRoute>
+                <Profile />
+              </PrivateRoute>
+            }
+          />
 
           {/* user */}
           <Route
             path="/user"
             element={
               <PrivateRoute role="user">
-                <UserDashboard/>
+                <UserDashboard />
               </PrivateRoute>
             }
           />
-          <Route path='/user-account' element={
-            <PrivateRoute>
-              <UserAccount/>
-            </PrivateRoute>
-          }/>
+          <Route
+            path="/user-account"
+            element={
+              <PrivateRoute>
+                <UserAccount />
+              </PrivateRoute>
+            }
+          />
           {/* Admin */}
           <Route
             path="/admin"
             element={
               <PrivateRoute role="admin">
-                <DashboardPage/>
+                <DashboardPage />
               </PrivateRoute>
             }
           />
@@ -80,6 +87,7 @@ const App = () => {
               </PrivateRoute>
             }
           />
+          <Route path="/cart" element={<CartPage />} />
         </Routes>
       </BrowserRouter>
     </>

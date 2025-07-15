@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../../component/Common/Navbar";
 import LoadingComponent from "../../component/Common/Dashboard/LoadingComponent";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { sum} from "../../slices/user/cartSlice";
 
 const ProductDetail = () => {
   const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch()
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1000);
     return () => clearTimeout(timer);
@@ -15,6 +17,9 @@ const ProductDetail = () => {
 
   const data = useSelector((state) => state.productDetail.productDetails);
 
+  const sendCartData = (product)=>{
+    dispatch(sum(1))
+  }
   return (
     <>
       {loading ? (
@@ -56,7 +61,7 @@ const ProductDetail = () => {
                 </div>
                 <div className="p-3 d-flex justify-content-start mt-2">
                   <button className="btn btn-dark">Buy Now</button>
-                  <button className="ms-3 btn btn-dark">
+                  <button className="ms-3 btn btn-dark" onClick={sendCartData}>
                     Add to cart
                   </button>
                 </div>

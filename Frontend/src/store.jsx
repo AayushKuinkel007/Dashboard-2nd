@@ -3,12 +3,14 @@ import signupSliceReducer from './slices/user/signupSlice'
 import loginSliceReducer from './slices/user/loginSlice'
 import productSliceReducer from './slices/common/productSlice'
 import productdetailSliceReducer from "./slices/common/productdetailSlice";
+import cartSliceReducer from "./slices/user/cartSlice"
 const store = configureStore({
     reducer:{
         signedDataShow:signupSliceReducer,
         loginUser:loginSliceReducer,
         productShow:productSliceReducer,
         productDetail:productdetailSliceReducer,
+        cartData:cartSliceReducer,
     }
 })
 

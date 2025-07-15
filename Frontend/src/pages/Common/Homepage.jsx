@@ -5,12 +5,13 @@ import { useDispatch, useSelector } from "react-redux";
 import "../../css/Homepage.css";
 import Searchbar from "../../component/Common/Searchbar";
 import { showproductDetails } from "../../slices/common/productdetailSlice";
-import { data, Link, useNavigate } from "react-router-dom";
+import { sum } from "../../slices/user/cartSlice"; // ✅ Import sum
+import { Link, useNavigate } from "react-router-dom";
+
 
 const Homepage = () => {
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
-  const Navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1000);
@@ -23,6 +24,9 @@ const Homepage = () => {
     dispatch(showproductDetails(product));
   };
 
+  const sendCartData = (product) => {
+    dispatch(sum(1));
+  };
   return (
     <>
       {loading ? (
@@ -65,7 +69,9 @@ const Homepage = () => {
                         </p>
                       </div>
                       <div className="p-3 d-flex justify-content-center">
-                        <button className="btn btn-dark">Add To Cart</button>
+                        <button className="btn btn-dark" onClick={sendCartData}>
+                          Add To Cart
+                        </button>
                       </div>
                     </div>
                   </div>
