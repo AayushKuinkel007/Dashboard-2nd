@@ -92,7 +92,7 @@ const Searchbar = () => {
           </div>
 
           <div className="col-md-4 d-flex justify-content-end align-items-center">
-            <Link to="#" className="text-dark position-relative me-3">
+            <Link to="/cart" className="text-dark position-relative me-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="28"

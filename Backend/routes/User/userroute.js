@@ -1,8 +1,8 @@
 const express = require("express");
 const userRouter = express.Router();
-const authMiddleware = require("../middleware/authmiddleware");
+const authMiddleware = require("../../middleware/authmiddleware");
 
-const { sendUserData, login, getUserProfile } = require("../controllers/usercontroller");
+const { sendUserData, login, getUserProfile } = require("../../controllers/User/usercontroller");
 
 // Register route
 userRouter.post("/senduserdata", sendUserData);
