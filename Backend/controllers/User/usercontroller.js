@@ -65,7 +65,7 @@ exports.login = async (req, res) => {
   }
 
   // ⏳ Set token to expire in 2 hours
-  const token = jwt.sign({ id: user._id }, jwtSecret, { expiresIn: "2h" });
+  const token = jwt.sign({ id: user._id }, jwtSecret, { expiresIn: "30d" });
 
   console.log("Login Successful. Token:", token); // ✅
   res.json({ token });
