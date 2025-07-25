@@ -1,3 +1,4 @@
+// Homepage.jsx
 import React, { useEffect, useState } from "react";
 import LoadingComponent from "../../component/Common/Dashboard/LoadingComponent";
 import Navbar from "../../component/Common/Navbar";
@@ -5,12 +6,12 @@ import { useDispatch, useSelector } from "react-redux";
 import "../../css/Homepage.css";
 import Searchbar from "../../component/Common/Searchbar";
 import { showproductDetails } from "../../slices/common/productdetailSlice";
-import { sum } from "../../slices/user/cartSlice"; // ✅ Import sum
-import { Link, useNavigate } from "react-router-dom";
-
+import { sum } from "../../slices/user/cartSlice";
+import { Link } from "react-router-dom";
 
 const Homepage = () => {
   const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState(""); // ⬅️ Search input state
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -27,6 +28,11 @@ const Homepage = () => {
   const sendCartData = (product) => {
     dispatch(sum(1));
   };
+
+  const filteredData = cardData?.filter((product) =>
+    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <>
       {loading ? (
@@ -34,11 +40,11 @@ const Homepage = () => {
       ) : (
         <>
           <Navbar />
-          <Searchbar />
+          <Searchbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
           <div className="container mt-4">
             <div className="row justify-content-center">
-              {cardData &&
-                cardData.map((product, index) => (
+              {filteredData?.length > 0 ? (
+                filteredData.map((product, index) => (
                   <div
                     className="col-md-4 d-flex justify-content-center mb-4"
                     key={index}
@@ -55,7 +61,7 @@ const Homepage = () => {
                           <img
                             src={product.img}
                             className="card-img-top"
-                            alt="..."
+                            alt={product.name}
                           />
                         </button>
                       </Link>
@@ -69,13 +75,19 @@ const Homepage = () => {
                         </p>
                       </div>
                       <div className="p-3 d-flex justify-content-center">
-                        <button className="btn btn-dark" onClick={sendCartData}>
+                        <button
+                          className="btn btn-dark"
+                          onClick={() => sendCartData(product)}
+                        >
                           Add To Cart
                         </button>
                       </div>
                     </div>
                   </div>
-                ))}
+                ))
+              ) : (
+                <p className="text-center mt-4">No products found.</p>
+              )}
             </div>
           </div>
         </>
