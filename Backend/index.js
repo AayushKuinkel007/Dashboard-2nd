@@ -20,6 +20,7 @@ connectDB();
 app.use("/users", userRouter);
 app.use("/cart",cartRouter)
 app.use("/addproduct",addProductRouter)
+app.use("/getproduct",addProductRouter)
 // Start Server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
